@@ -1,6 +1,14 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  # args: ['build', '-t', 'gcr.io/outtripper-engine/outtripper-image', '.']
+  args: [
+      'beta',
+      'functions',
+      'deploy','${_NAME}',
+      '--source=https://source.developers.google.com/projects/${PROJECT_ID}/repos/default/moveable-aliases/master/paths/',
+      '--trigger-bucket=${_ROOT}-trigger',
+      '--entry-point=thumbnail',
+      '--project=${PROJECT_ID}'
+  ]
   timeout: 500s
 
 
