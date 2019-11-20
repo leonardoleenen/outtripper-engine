@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['build', '-t', 'gcr.io/outtripper-engine/outtripper-image', '.']
+  # args: ['build', '-t', 'gcr.io/outtripper-engine/outtripper-image', '.']
   timeout: 500s
 
 
